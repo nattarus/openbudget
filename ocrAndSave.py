@@ -2,6 +2,7 @@ import pickle
 import re
 from google.cloud import vision
 import argparse
+import fitz
 
 
 def pageParser(doc, pageNum):
