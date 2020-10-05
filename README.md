@@ -1,6 +1,6 @@
 # Thailand Official Budget Parser
 ## How it work
-  script ไม่ได้ parse ทั้งหมด แต่เลือกเฉพาะส่วนของรายละเอียด (หัวข้อ 7 ใน table of content) ในแต่ละหน่วยงาน เล่มขาวคาดแดง(ฉ.3)
+  script ไม่ได้ parse ทั้งหมด แต่เลือกเฉพาะส่วนของรายละเอียด (หัวข้อ 7 ใน table of content) ของแต่ละหน่วยงานในเล่มขาวคาดแดง(ฉ.3)
   หลักการทำงานของ script จะแยกเป็น 2 ส่วน
   1. ocrAndSave.py ocr โดย google cloud vision แล้ว save ไว้ก่อน เป็น list of dict
   1. parserToCSV.py เปิดที่ save ไว้แล้ว ตัด string โดยจับ pattern แยก 2 column(หัวข้อ และ มูลค่า) แล้วมาเทียบกันถ้าไม่ตรงกัน ต้อง debug
@@ -32,3 +32,10 @@ python parserToCSV.py -i input_from_above -o output_csv > .debug.txt
 * pattern ของหัวข้อ ไม่มีมาตรฐาน
 
 เป็น edge case ซึ่งต้องแก้ทีละไฟล์
+
+#### Folder
+* data/ocr_text ---> data from ocrAndSave.py
+* data/csv final ---> result without error
+
+#### LINK
+(สำนักงบ)[http://www.bb.go.th/topic3.php?catID=1328&gid=860&mid=544]
