@@ -1,4 +1,4 @@
-# Thailand Official Budget Parser
+# Thailand Official Budget to CSV
 ## How it work
   หลักการทำงานของ script จะแยกเป็น 2 ส่วน
   1. ocrAndSave.py OCR โดย google cloud vision แล้ว save ไว้ก่อน เป็น list of dict
@@ -37,6 +37,10 @@ python parserToCSV.py -i input_from_above -o output_csv > .debug.txt
 #### Folder
 * data/ocr_text ---> data from ocrAndSave.py
 * data/csv final ---> result without error
+
+#### Project Goal
+* ระยะแรกทำ 64 ให้ครบทุกเล่มที่ทำได้ แล้ว publish 
+
 
 #### LINK
 (สำนักงบ)[http://www.bb.go.th/topic3.php?catID=1328&gid=860&mid=544]
