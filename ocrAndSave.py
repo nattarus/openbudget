@@ -1,11 +1,7 @@
 import pickle
 import re
-import io
-import os
 from google.cloud import vision
-import fitz
 import argparse
-# from PIL import ImageFont, ImageDraw, Image
 
 
 def pageParser(doc, pageNum):
