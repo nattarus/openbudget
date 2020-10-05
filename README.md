@@ -1,9 +1,10 @@
 # Thailand Official Budget Parser
 ## How it work
-  script ไม่ได้ parse ทั้งหมด แต่เลือกเฉพาะส่วนของรายละเอียด (หัวข้อ 7 ใน table of content) ของแต่ละหน่วยงานในเล่มขาวคาดแดง(ฉ.3)
   หลักการทำงานของ script จะแยกเป็น 2 ส่วน
-  1. ocrAndSave.py ocr โดย google cloud vision แล้ว save ไว้ก่อน เป็น list of dict
+  1. ocrAndSave.py OCR โดย google cloud vision แล้ว save ไว้ก่อน เป็น list of dict
   1. parserToCSV.py เปิดที่ save ไว้แล้ว ตัด string โดยจับ pattern แยก 2 column(หัวข้อ และ มูลค่า) แล้วมาเทียบกันถ้าไม่ตรงกัน ต้อง debug
+  
+  script ไม่ได้ parse ทั้งหมด แต่เลือกเฉพาะส่วนของรายละเอียด (หัวข้อ 7 ใน table of content) ของแต่ละหน่วยงานในเล่มขาวคาดแดง(ฉ.3)
   
 ### ocrAndSave.py
 ```
@@ -20,7 +21,7 @@ python ocrAndSave.py -i input_pdf -o output
 python parserToCSV.py -i input_from_above -o output_csv
 ```
 หากส่วนที่จำนวนหัวข้อ กับ มูลค่า ไม่ตรงกันจะ ขึ้น error ต้องลองไล่ดู ว่าตัดพลาดตรงไหน แล้ว เพิ่ม pattern Regex เข้าไป(ส่วนใหญ่เพิ่มที่ third pattern)
-แผนที่ตรงจะ save เป็น csv
+โครงการที่ตรงจะ save เป็น csv
 
 เวลา debug
 ```
